@@ -1,134 +1,259 @@
 ---
-id: 20251001T170057-amazon-sagemaker-overview
 aliases:
   - Amazon SageMaker Overview
 tags:
-  - AI
-  - amazon-sagemaker
+  - AWS
+  - ML
+  - AIF-C01
 created: 2025-10-01 17:00
-modified: 2025-10-09 06:30
+modified: 2026-06-29 18:24
 folder: AI
 publish: true
 title: Amazon SageMaker Overview
 ---
 
-## What is Amazon SageMaker?
-- SageMaker is AWS's platform for **building your own custom AI/ML** models from scratch.
-- It contains all the tools you need to:
-	- **Prepare** your data
-	- **Build** a model
-	- **Train** the model
-	- Test It
-	- **Deploy** it to production
-- SageMaker has different versions for different skill levels (Canvas, Autopilot, Studio)
-- Depending the steps you are in the process of building your model, SageMaker has different tools that can help you in the process.
+## Main Concept
 
-## Key components
+Amazon SageMaker is AWS's fully managed end-to-end ML platform. It covers every stage of the ML lifecycle — from data preparation to model training, deployment, and monitoring — without managing underlying infrastructure. 
 
-### SageMaker Studio
+SageMaker is the answer whenever a scenario requires building, training, or deploying a custom ML model, as opposed to consuming a pre-built managed service like Rekognition or Transcribe.
 
-- Integrated development environment (IDE) for ML
-- Jupyter notebooks
-- Visual tools for ML workflow
+> [!TIP] Key Idea
+> 
+> - **Managed AI services** (Rekognition, Transcribe, Comprehend) → pre-built AI capabilities, no model building needed.
+>     
+> - **Amazon SageMaker** → when you need to build, train, and deploy YOUR OWN custom ML model.
+>     
+> - **The exam distinguishes these two paths clearly** — recognizing which one applies to a scenario is high-value.
+>     
 
-### SageMaker Canvas
+## SageMaker Studio
 
-- No-code ML
-- Visual interface
-- AutoML capabilities
-- Business analysts can build models
+The central interface for everything in SageMaker — a unified, web-based environment where all ML development happens in one place.
 
-### SageMaker Data Wrangler
+> [!TIP] Key Idea
+> 
+> - **Team collaboration** → multiple team members work in the same environment.
+>     
+> - **End-to-end** → data prep, training, tuning, debugging, deployment, and monitoring — all from one interface.
+>     
+> - **Automated workflows** → orchestrate ML pipelines without switching tools.
+>     
 
-- Data preparation
-- Visual data transformation
-- Feature engineering
+```
+Keyphrase: "end-to-end ML development in a single unified environment" → SageMaker Studio.
+```
 
-### SageMaker Autopilot
+## The SageMaker Features Map — By ML Pipeline Stage
 
-- Automated ML (AutoML)
-- Automatically builds, trains, and tunes models
-- Generates explainable models
+### Data Preparation
 
-### SageMaker Training
+**SageMaker Data Wrangler** Visual tool for data exploration, transformation, and preparation — EDA without writing code.
 
-- Distributed training
-- Built-in algorithms
-- Bring your own algorithm
-- Spot instance training
+```
+Keyphrase: "visually prepare and explore data before training" → SageMaker Data Wrangler.
+```
 
-### SageMaker Inference
+**SageMaker Feature Store** Centralized repository to store, share, and reuse ML features across teams and models.
 
-- Real-time endpoints
-- Batch transform
-- Serverless inference
-- Multi-model endpoints
+```
+Keyphrase: "store and reuse features across multiple ML models or teams" → SageMaker Feature Store.
+```
 
-### SageMaker Pipelines
+**SageMaker Ground Truth** Managed data labeling service combining human labelers with automated labeling.
 
-- ML workflow orchestration
-- CI/CD for ML (MLOps)
+```
+Keyphrase: "label training data at scale" → SageMaker Ground Truth.
+```
+	
+### Model Training & Tuning
 
-### SageMaker Feature Store
+**Amazon SageMaker (core)** Fully managed training environment — you bring your algorithm and data, SageMaker provisions compute and manages infrastructure.
 
-- Centralized feature repository
-- Online and offline feature storage
+> [!example] Example from Maarek's lesson
+> 
+> Goal: predict a student's AWS exam score. Input features: years of IT experience, years of AWS experience, hours spent on the course. Output: predicted exam score.
+> 
+> Historical data with known scores is used to train the model on SageMaker. Once trained, a new student inputs their profile and gets a predicted score — all without managing any servers.
 
-### SageMaker Model Monitor
+**SageMaker Automatic Model Tuning (AMT)** Automates hyperparameter tuning. You define the objective metric — AMT handles the rest: choosing hyperparameter ranges, search strategy, run duration, and early stopping conditions.
 
-- Monitor model performance
-- Detect data drift
-- Model quality monitoring
+> [!TIP] Key Idea
+> 
+> - **You define** → the objective metric (what to optimize for).
+>     
+> - **AMT handles** → hyperparameter ranges, search strategy, early stopping.
+>     
+> - **Benefit** → saves time and money by avoiding suboptimal configurations automatically.
+>     
 
-### SageMaker JumpStart
-- Pre-trained models
-- Solution templates
-- One-click deployment of popular models
+```
+Keyphrase: "automatically find the best hyperparameter values" → SageMaker AMT.
+```
 
-## High level process of building a model
+**SageMaker JumpStart** Pre-built ML solutions and foundation models ready to deploy with one click.
 
-### Data Preparation & Feature Engineering
-- You have: Raw messy data (CSV files, images, text, etc.)
-- SageMaker helps: Clean it, transform it, organize it
-- Tools: 
-  - SageMaker Data Wrangler
-  - SageMaker Feature Store 
+```
+Keyphrase: "deploy a pre-built foundation model or ML solution quickly" → SageMaker JumpStart.
+```
 
-### Build the Model
-- You want: A Model that predicts something
-- SageMaker provides:
-  - Pre-build algorithms (ready recipes)
-  - Option to write your own code
-  - AutoML (automatic model building)
-- Tools depends of your skills
-  - SageMaker Canvas (No Code - Visual Interface)
-  - SageMaker Autopilot (Low Code - Automated ML)
-  - SageMaker Studio (Full Code - Complete Control)
-  - SageMaker JumpStart (Pre-built Models)
+### Model Deployment — The Four Types
 
-### Train the Model
-- You want: Teach (train) the model by showing examples
-- SageMaker provides: Power computers (GPUs) to do the training
-- Tool: SageMaker Training Jobs
+This is a high-priority exam area. Maarek explicitly flags the keywords to watch for.
 
-### Test & Evaluate
-- You want: Test if the model actually works well
-- SageMaker provides: Tools to measure accuracy
-- Tools: 
-  - SageMaker Model Monitor (for production monitoring)
-  - SageMaker Model Evaluation (Built into SageMaker Training Jobs)
-  - SageMaker Clarify (for bias and fairness)
-  - SageMaker Experiments
-  - SageMaker Model Cards
-  - SageMaker Debugger
+> [!TIP] Key Idea: The four deployment types and their exam signal words
+> 
+> - **Real-time** → low latency, small payload, one record, managed infrastructure.
+>     
+> - **Serverless** → low latency, no infrastructure to manage, risk of cold start on first call.
+>     
+> - **Asynchronous** → near-real time, large payload, one record at a time, long processing.
+>     
+> - **Batch Transform** → high latency, entire dataset, multiple records processed concurrently.
+>     
 
-> [!NOTE]
-> Evaluation happens at multiple stages (during the training, after training, in production)
+#### Real-Time Inference
 
+```
+Latency:          Low
+Payload size:     Up to 6 MB
+Records:          One at a time
+Processing time:  Up to 60 seconds
+Infrastructure:   You configure CPU/GPU + auto-scaling
 
-### Deploy to Production
-- You want: Make your model available for real use
-- SageMaker provides: Hosting infrastructure
-- Tool: SageMaker Endpoints (Part of SageMaker Inference)
+Exam signal words: "real-time", "immediate response", "small payload"
+```
+
+#### Serverless Inference
+
+```
+Latency:          Low (but cold start risk)
+Payload size:     Up to 6 MB
+Records:          One at a time
+Processing time:  Up to 60 seconds
+Infrastructure:   None to manage — auto-scaling built in
+```
+
+> [!TIP] Key Idea: Cold Start
+> 
+> If the serverless endpoint has had no traffic for a period, the first request triggers infrastructure to boot up — adding latency to that first call. Subsequent calls are fast.
+
+```
+Exam signal words: "no infrastructure to manage", "serverless", "variable traffic"
+Key differentiator from real-time: no infrastructure management + cold start risk.
+```
+
+#### Asynchronous Inference
+
+```
+Latency:          Near-real time (not immediate)
+Payload size:     Up to 1 GB
+Records:          One large record at a time
+Processing time:  Up to 1 hour
+Storage:          Requests and responses go through Amazon S3
+
+Exam signal words: "near-real time", "large payload", "long processing time", "up to 1 GB"
+```
+
+#### Batch Transform
+
+```
+Latency:          High (minutes to hours)
+Payload size:     100 MB per mini-batch (many mini-batches allowed)
+Records:          Entire dataset — multiple records processed concurrently
+Processing time:  Up to 1 hour
+Storage:          Requests and responses go through Amazon S3
+
+Exam signal words: "entire dataset", "multiple predictions", "batch", "concurrent processing"
+```
+
+#### Deployment Types — Quick Comparison Table
+
+|Type|Latency|Payload|Records|Key Signal|
+|---|---|---|---|---|
+|Real-time|Low|6 MB|1|immediate response|
+|Serverless|Low + cold start|6 MB|1|no infrastructure|
+|Asynchronous|Near-real time|1 GB|1|large payload|
+|Batch Transform|High|100 MB/mini-batch|Many|entire dataset|
+
+### Monitoring & Responsible AI
+
+**SageMaker Model Monitor** Continuously monitors deployed models for data quality, model drift, bias drift, and feature attribution drift.
+
+```
+Keyphrase: "detect model drift or performance degradation in production" → SageMaker Model Monitor.
+```
+
+**SageMaker Clarify** Detects bias in training data and model predictions. Provides explainability reports.
+
+```
+Keyphrase: "detect bias in ML model" or "explain model predictions" → SageMaker Clarify.
+```
+
+**SageMaker Model Cards** Standardized documentation capturing model purpose, training data, evaluation results, and limitations.
+
+```
+Keyphrase: "document model details for transparency or governance" → SageMaker Model Cards.
+```
+
+## The Full SageMaker Feature Map
+
+```
+Studio               → unified end-to-end ML development environment
+Data Wrangler        → prepare and explore data visually (EDA)
+Feature Store        → store and reuse features across models
+Ground Truth         → label training data at scale
+Core SageMaker       → train custom ML models
+AMT                  → automate hyperparameter tuning
+JumpStart            → deploy pre-built models and solutions
+Real-time endpoint   → low latency, one record, small payload
+Serverless endpoint  → no infrastructure, cold start risk
+Async endpoint       → near-real time, large payload, one record
+Batch transform      → high latency, entire dataset, concurrent
+Model Monitor        → detect drift and degradation in production
+Clarify              → detect bias, explain predictions
+Model Cards          → document models for transparency
+```
+
+## Where SageMaker Appears in the Exam Domains
+
+```
+Domain 1, Task 1.2  → SageMaker as the managed platform for custom ML models
+Domain 1, Task 1.3  → features mapped to each ML pipeline stage
+                      Data Wrangler, Feature Store, Core, AMT, Model Monitor
+Domain 2, Task 2.3  → SageMaker JumpStart for generative AI applications
+Domain 4, Task 4.1  → Clarify (bias), Model Monitor (monitoring), A2I (human review)
+Domain 4, Task 4.2  → Model Cards (transparency and explainability)
+Domain 5, Task 5.1  → Model Cards (data lineage and governance)
+```
+
+## What You Do NOT Need to Know
+
+- How to write SageMaker training scripts or code.
+- How to configure SageMaker endpoints technically.
+- The mathematics behind any SageMaker built-in algorithm.
+- How to implement bias detection technically.
+
+You describe what each feature does and match it to the right scenario — nothing more.
+
+## Related Notes
+
+- [[20260629T1821-amazon-sagemaker-data-wrangler|Amazon SageMaker Data Wrangler]]
+- [[20260306T0936-feature-engineering|Feature Engineering]]
+- [[Amazon SageMaker Ground Truth]]
+- [[Amazon SageMaker Automatic Model Tuning (AMT)]]
+- [[Amazon SageMaker JumpStart]]
+- [[Amazon SageMaker Model Monitor]]
+- [[Amazon SageMaker Clarify]]
+- [[Amazon SageMaker Model Cards]]
+- [[AWS AI/ML Managed Services — Index]]
+- [[MLOps]]
+- [[Model Drift]]
+- [[Hyperparameter Tuning]]
+- [[Phases of a Machine Learning Project]]
+- [[Responsible AI]]
+- [[Inferencing]]
+- [[Batch Inferencing]]
+- [[Real-time Inferencing]]
 
 

@@ -53,7 +53,7 @@ EDA directly feeds into feature engineering — you cannot engineer good  featur
 - [[20260306T0936-feature-engineering|Feature Engineering]]
 - [[Data Pre-processing]]
 - [[Correlation Matrix]]
-- [[Amazon SageMaker Data Wrangler]]
+- [[20260629T1821-amazon-sagemaker-data-wrangler]]
 - [[Amazon QuickSight]]
 - [[AWS Glue DataBrew]]
 - [[20260524T0639-model-fit|Model Fit - Overfitting and Underfitting]]

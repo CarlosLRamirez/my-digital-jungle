@@ -502,15 +502,15 @@ Volvemos a la consola de AWS y vamos ECS → Cluster → Services, buscamos el s
 
 Chequeamos donde dice _Force new deployment_ y el resto de parámetros los dejamos como están
 
-![[Pasted image 20260518180709.png]]
+![[3 Resources/308 Notas Atómicas/308.01 DevOps/_attachments/Pasted image 20260518180709.png]]
 
 Al completar el despliegue del Service veremos una nueva **Task** la cual ya tiene la actualización del código, por ser un nuevo contenedor, tiene una nueva IP. Nos vamos al detalle de la **Task** y visualizamos la nueva IP asignada.
 
-![[Pasted image 20260518180830.png]]
+![[3 Resources/308 Notas Atómicas/308.01 DevOps/_attachments/Pasted image 20260518180830.png]]
 
 Actualizamos la URL en nuestro navegador para apuntar a la nueva IP y vemos nuevamente la página principal — pero la diferencia es que al presionar los botones de consulta Usuarios y Productos, ahora sí nos devuelve la respuesta de manera exitosa.
 
-![[Pasted image 20260518180859.png]]
+![[3 Resources/308 Notas Atómicas/308.01 DevOps/_attachments/Pasted image 20260518180859.png]]
 
 🎉🥳 Felicidades! Ésta es la prueba de fuego: todo está funcionando y confirmamos que nuestra solución está corriendo en la nube 🚀☁️
 
@@ -520,7 +520,7 @@ Actualizamos la URL en nuestro navegador para apuntar a la nueva IP y vemos nuev
 
 El último paso sería borrar únicamente los **Services** para no incurrir en costos de AWS. En el caso que queramos volver a desplegar la solución otra vez, únicamente necesitamos volver a crear los Services de backend, anotar las IPs, actualizarlas en el código de frontend y volver a crear el Service de frontend.
 
-![[Pasted image 20260518181008.png]]
+![[3 Resources/308 Notas Atómicas/308.01 DevOps/_attachments/Pasted image 20260518181008.png]]
 
 ## Resultados y Conclusiones
 

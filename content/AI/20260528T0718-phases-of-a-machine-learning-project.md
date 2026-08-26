@@ -132,5 +132,5 @@ You only need to **describe** the components and **identify** the relevant AWS s
 - [[20251001T170057-amazon-sagemaker-overview|Amazon SageMaker]]
 - [[Amazon SageMaker Model Monitor]]
 - [[20260306T0948-amazon-sagemaker-feature-store|Amazon SageMaker Feature Store]]
-- [[Amazon SageMaker Data Wrangler]]
+- [[20260629T1821-amazon-sagemaker-data-wrangler]]
 - [[Amazon Augmented AI (A2I)]]

@@ -1,6 +1,6 @@
 ---
 created: 2025-09-18 06:02
-modified: 2026-06-19 19:10
+modified: 2026-06-29 18:23
 tags:
   - AI
   - AWS
@@ -308,8 +308,6 @@ Tactical index of Stephane Maarek's AIF-C01 course mapped to my atomic notes. Le
 
 ### Section 9: AWS Managed AI Services
 
-#### Why AWS Managed Services?
-
 - [[20260602T1055-aws-ai-ml-managed-services-index|AWS AI/ML Managed Services — Index]] 
 - [[20260610T1637-amazon-comprehend|Amazon Comprehend]]
 - [[20260612T0849-amazon-translate|Amazon Translate]]
@@ -328,13 +326,16 @@ Tactical index of Stephane Maarek's AIF-C01 course mapped to my atomic notes. Le
 - [[20260619T1909-aws-trainium|AWS Trainium]]
 - [[20260619T1910-aws-inferentia|AWS Inferentia]]
 
-### Section 10
+### Section 10: Amazon SageMaker - Deep Dive
 
-
-
-
+#### Amazon SageMaker AI Overview
 
 - [[20251001T170057-amazon-sagemaker-overview|Amazon SageMaker Overview]]
+- [[20260629T1821-amazon-sagemaker-data-wrangler|Amazon SageMaker Data Wrangler]]
+- [[20260629T1822-amazon-sagemaker-feature-store|Amazon SageMaker Feature Store]]
+
+
+
 - [[20260306T0948-amazon-sagemaker-feature-store|Amazon SageMaker Feature Store]]
 
 ### Section 11
